@@ -14,6 +14,7 @@
 		299E5D481B00F3AD00D73939 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 299E5D471B00F3AD00D73939 /* Images.xcassets */; };
 		299E5D4B1B00F3AD00D73939 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299E5D491B00F3AD00D73939 /* LaunchScreen.xib */; };
 		299E5D571B00F3AD00D73939 /* iOS_PhotoloopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E5D561B00F3AD00D73939 /* iOS_PhotoloopTests.m */; };
+		299E5D621B00F5BC00D73939 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		299E5D501B00F3AD00D73939 /* iOS_PhotoloopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_PhotoloopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		299E5D551B00F3AD00D73939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		299E5D561B00F3AD00D73939 /* iOS_PhotoloopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_PhotoloopTests.m; sourceTree = "<group>"; };
+		299E5D601B00F5BC00D73939 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
+		299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		299E5D391B00F3AD00D73939 /* iOS_Photoloop */ = {
 			isa = PBXGroup;
 			children = (
+				299E5D601B00F5BC00D73939 /* AVCamPreviewView.h */,
+				299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */,
 				299E5D3E1B00F3AD00D73939 /* AppDelegate.h */,
 				299E5D3F1B00F3AD00D73939 /* AppDelegate.m */,
 				299E5D411B00F3AD00D73939 /* ViewController.h */,
@@ -221,6 +226,7 @@
 			files = (
 				299E5D431B00F3AD00D73939 /* ViewController.m in Sources */,
 				299E5D401B00F3AD00D73939 /* AppDelegate.m in Sources */,
+				299E5D621B00F5BC00D73939 /* AVCamPreviewView.m in Sources */,
 				299E5D3D1B00F3AD00D73939 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
