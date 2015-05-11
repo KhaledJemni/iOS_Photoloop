@@ -1,13 +1,6 @@
-//
-//  ViewController.m
-//  iOS_Photoloop
-//
-//  Created by Khaled Jemni on 11/05/15.
-//  Copyright (c) 2015 Khaled Jemni. All rights reserved.
-//
 
 #import "ViewController.h"
-#import "PicturesViewController.h"
+#import "TsawerViewController.h"
 
 @interface ViewController ()
 
@@ -36,7 +29,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         [self addObserver:self forKeyPath:@"sessionRunningAndDeviceAuthorized" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:SessionRunningAndDeviceAuthorizedContext];
         [self addObserver:self forKeyPath:@"stillImageOutput.capturingStillImage" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:CapturingStillImageContext];
         [self addObserver:self forKeyPath:@"movieFileOutput.recording" options:(NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew) context:RecordingContext];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subjectAreaDidChange:) name:AVCaptureDeviceSubjectAreaDidChangeNotification object:[[self videoDeviceInput] device]];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subjectAreaDidChange:) name:AVCaptureDeviceSubjectAreaDidChangeNotification object:[[self videoDeviceInput] device]]; 
         
         __weak ViewController *weakSelf = self;
         [self setRuntimeErrorHandlingObserver:[[NSNotificationCenter defaultCenter] addObserverForName:AVCaptureSessionRuntimeErrorNotification object:[self session] queue:nil usingBlock:^(NSNotification *note) {
@@ -48,7 +41,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
                 
             });
         }]];
-        
+   
         [[self session] startRunning];
     });
 }
@@ -59,15 +52,15 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 -(IBAction) takePicture:(id)sender
 {
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.2f
-                                                      target:self selector:@selector(takePicture:) userInfo:nil repeats:NO];
+     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.2f
+     target:self selector:@selector(takePicture:) userInfo:nil repeats:NO];
     
-    
-    
+
+
     shouldTakePicture = YES;
     
     if (pictures.count==20) {
-        
+
         [timer invalidate];
         timer = nil;
         [self performSegueWithIdentifier:@"tsawer" sender:self];
@@ -146,7 +139,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
             UIImage * image = [self getUIImageFromBuffer:sampleBuffer];
             
             [pictures addObject:image];
-            [self.takePic setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)pictures.count] forState:UIControlStateNormal];
+            [self.takePict setTitle:[NSString stringWithFormat:@"%lu",(unsigned long)pictures.count] forState:UIControlStateNormal];
         }
         
         
@@ -170,7 +163,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     }
     
     return captureDevice;
-    
+
 }
 
 
@@ -230,12 +223,48 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
     
 }
 
+- (IBAction)switchFlash:(id)sender {
+   
+    
+    if ([sender isOn]) {
+        AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        if ([device hasTorch]) {
+            [device lockForConfiguration:nil];
+            [device setTorchMode:AVCaptureTorchModeOn];
+            [device unlockForConfiguration];
+        }
+    } else {
+        AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        if ([device hasTorch]) {
+            [device lockForConfiguration:nil];
+            [device setTorchMode:AVCaptureTorchModeOff];
+            [device unlockForConfiguration];
+        }
+        
+    }
+}
+
+
+- (IBAction)switchCamera:(UISegmentedControl *)sender {
+
+    if (sender.selectedSegmentIndex==0) {
+        NSLog(@"FRONT");
+    }
+    
+    else if (sender.selectedSegmentIndex==1) {
+        NSLog(@"BACK");
+    }
+}
+
+
+
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"Pictures"])
+    if([segue.identifier isEqualToString:@"tsawer"])
     {
-        PicturesViewController * nextView = segue.destinationViewController;
-        
+        TsawerViewController * nextView = segue.destinationViewController;
         nextView.pics = pictures;
     }
     

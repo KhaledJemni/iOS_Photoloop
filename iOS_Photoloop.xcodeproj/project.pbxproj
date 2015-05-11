@@ -17,6 +17,7 @@
 		299E5D621B00F5BC00D73939 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */; };
 		299E5D661B00F69100D73939 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299E5D651B00F69100D73939 /* AVFoundation.framework */; };
 		299E5D681B00F7EB00D73939 /* rec.png in Resources */ = {isa = PBXBuildFile; fileRef = 299E5D671B00F7EB00D73939 /* rec.png */; };
+		299E5D6B1B00FAD800D73939 /* PicturesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E5D6A1B00FAD800D73939 /* PicturesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
 		299E5D651B00F69100D73939 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		299E5D671B00F7EB00D73939 /* rec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rec.png; sourceTree = "<group>"; };
+		299E5D691B00FAD800D73939 /* PicturesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesViewController.h; sourceTree = "<group>"; };
+		299E5D6A1B00FAD800D73939 /* PicturesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 				299E5D411B00F3AD00D73939 /* ViewController.h */,
 				299E5D421B00F3AD00D73939 /* ViewController.m */,
 				299E5D441B00F3AD00D73939 /* Main.storyboard */,
+				299E5D691B00FAD800D73939 /* PicturesViewController.h */,
+				299E5D6A1B00FAD800D73939 /* PicturesViewController.m */,
 				299E5D471B00F3AD00D73939 /* Images.xcassets */,
 				299E5D491B00F3AD00D73939 /* LaunchScreen.xib */,
 				299E5D3A1B00F3AD00D73939 /* Supporting Files */,
@@ -234,6 +239,7 @@
 			files = (
 				299E5D431B00F3AD00D73939 /* ViewController.m in Sources */,
 				299E5D401B00F3AD00D73939 /* AppDelegate.m in Sources */,
+				299E5D6B1B00FAD800D73939 /* PicturesViewController.m in Sources */,
 				299E5D621B00F5BC00D73939 /* AVCamPreviewView.m in Sources */,
 				299E5D3D1B00F3AD00D73939 /* main.m in Sources */,
 			);
