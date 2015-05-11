@@ -9,6 +9,7 @@
 @implementation TsawerViewController
 
 - (void)viewDidLoad {
+    NSLog(@"tests");
     [super viewDidLoad];
     if(self.pics.count>0)
     self.image.image = [self.pics objectAtIndex:0];
