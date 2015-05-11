@@ -15,9 +15,34 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-P5-PMG">
+                                <rect key="frame" x="255" y="545" width="46" height="47"/>
+                                <state key="normal" title="Button" image="rec.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dJl-x7-lrc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dOQ-hY-PIu"/>
+                    <navigationItem key="navigationItem" id="dOQ-hY-PIu">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="8Xo-v3-dRD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XkI-Xc-Jsv">
+                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="previewViewVideo" destination="kh9-bI-dsS" id="Lqq-xQ-Sda"/>
+                        <outlet property="takePic" destination="Pb6-P5-PMG" id="5aZ-1v-hkb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,4 +67,7 @@
             <point key="canvasLocation" x="1052" y="598"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rec.png" width="160" height="160"/>
+    </resources>
 </document>

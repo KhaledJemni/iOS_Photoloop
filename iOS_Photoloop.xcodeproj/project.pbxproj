@@ -15,6 +15,8 @@
 		299E5D4B1B00F3AD00D73939 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 299E5D491B00F3AD00D73939 /* LaunchScreen.xib */; };
 		299E5D571B00F3AD00D73939 /* iOS_PhotoloopTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E5D561B00F3AD00D73939 /* iOS_PhotoloopTests.m */; };
 		299E5D621B00F5BC00D73939 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */; };
+		299E5D661B00F69100D73939 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299E5D651B00F69100D73939 /* AVFoundation.framework */; };
+		299E5D681B00F7EB00D73939 /* rec.png in Resources */ = {isa = PBXBuildFile; fileRef = 299E5D671B00F7EB00D73939 /* rec.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		299E5D561B00F3AD00D73939 /* iOS_PhotoloopTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_PhotoloopTests.m; sourceTree = "<group>"; };
 		299E5D601B00F5BC00D73939 /* AVCamPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPreviewView.h; sourceTree = "<group>"; };
 		299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPreviewView.m; sourceTree = "<group>"; };
+		299E5D651B00F69100D73939 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		299E5D671B00F7EB00D73939 /* rec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rec.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299E5D661B00F69100D73939 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,7 @@
 		299E5D2E1B00F3AD00D73939 = {
 			isa = PBXGroup;
 			children = (
+				299E5D651B00F69100D73939 /* AVFoundation.framework */,
 				299E5D391B00F3AD00D73939 /* iOS_Photoloop */,
 				299E5D531B00F3AD00D73939 /* iOS_PhotoloopTests */,
 				299E5D381B00F3AD00D73939 /* Products */,
@@ -84,6 +90,7 @@
 		299E5D391B00F3AD00D73939 /* iOS_Photoloop */ = {
 			isa = PBXGroup;
 			children = (
+				299E5D671B00F7EB00D73939 /* rec.png */,
 				299E5D601B00F5BC00D73939 /* AVCamPreviewView.h */,
 				299E5D611B00F5BC00D73939 /* AVCamPreviewView.m */,
 				299E5D3E1B00F3AD00D73939 /* AppDelegate.h */,
@@ -204,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				299E5D681B00F7EB00D73939 /* rec.png in Resources */,
 				299E5D461B00F3AD00D73939 /* Main.storyboard in Resources */,
 				299E5D4B1B00F3AD00D73939 /* LaunchScreen.xib in Resources */,
 				299E5D481B00F3AD00D73939 /* Images.xcassets in Resources */,
@@ -349,6 +357,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOS_Photoloop",
+				);
 				INFOPLIST_FILE = iOS_Photoloop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +371,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOS_Photoloop",
+				);
 				INFOPLIST_FILE = iOS_Photoloop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
